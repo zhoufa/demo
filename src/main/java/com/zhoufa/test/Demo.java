@@ -11,6 +11,8 @@ public class Demo {
         System.out.println("这个是我在Mac pro上的第一个输出内容");
         Soap soap = new Soap();
         System.out.println(soap);
-
+        for (int i = 0; i < 100; i++) {
+            System.out.println(i);
+        }
     }
 }
