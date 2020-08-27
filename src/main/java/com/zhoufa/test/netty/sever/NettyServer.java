@@ -22,6 +22,14 @@ import java.util.concurrent.Executors;
  * ├─────┬──┴─┬─┴──┬┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤ ┌───┼───┼───┐ ├───┴───┼───┤ E││
  * │ Ctrl│    │Alt │         Space         │ Alt│    │    │Ctrl│ │ ← │ ↓ │ → │ │   0   │ . │←─┘│
  * └─────┴────┴────┴───────────────────────┴────┴────┴────┴────┘ └───┴───┴───┘ └───────┴───┴───┘
+ * bootstrap 配置并启动服务的类
+ * buffer   缓冲相关类，对NIO Buffer做了一些封装
+ * channel  核心部分，处理连接
+ * container    连接其他窗口的代码
+ * example  使用示例，在正式版本里面没有
+ * handler  基于handler的扩展部分，实现土方编解码等附加功能
+ * logging  日志
+ * util 工具
  */
 public class NettyServer {
     final static int port = 8080;
