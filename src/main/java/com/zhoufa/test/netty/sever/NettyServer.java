@@ -26,7 +26,7 @@ import java.util.concurrent.Executors;
  * buffer   缓冲相关类，对NIO Buffer做了一些封装
  * channel  核心部分，处理连接
  * container    连接其他窗口的代码
- * example  使用示例，在正式版本里面没有
+ * example  使用示例，在jar包里面没有
  * handler  基于handler的扩展部分，实现土方编解码等附加功能
  * logging  日志
  * util 工具
@@ -67,7 +67,7 @@ public class NettyServer {
             parentChannel = bootstrap.bind(localAddress);
         }
 
-        class MyChannelHandler extends SimpleChannelHandler{
+        static class MyChannelHandler extends SimpleChannelHandler{
             @Override
             public void channelClosed(ChannelHandlerContext ctx, ChannelStateEvent e) {
                 System.out.println("Channel closed " + e);
@@ -80,6 +80,7 @@ public class NettyServer {
 
             @Override
             public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) {
+//                ((ChannelBuffer) e.getMessage()).readableBytes();
                 System.out.println("New message " + e.toString() + " from" +  ctx.getChannel());
                 processMsg(e);
             }
